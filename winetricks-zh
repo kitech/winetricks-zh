@@ -142,6 +142,9 @@ XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 W_PREFIXES_ROOT="${WINE_PREFIXES:-$XDG_DATA_HOME/wineprefixes}"
 
+echo $W_PREFIXES_ROOT
+#exit
+
 # For temp files before $WINEPREFIX is available:
 if [ -x "`which mktemp 2>/dev/null`" ]
 then
@@ -669,7 +672,7 @@ w_download_to()
         if [ -x "`which aria2c 2>/dev/null`" ]
         then
             # Basic aria2c support.
-            aria2c -c -o "$_W_file" "$_W_url"
+            aria2c -x 5 -k 1M -c -o "$_W_file" "$_W_url"
         elif [ -x "`which wget 2>/dev/null`" ]
         then
            # Use -nd to insulate ourselves from people who set -x in WGETRC
