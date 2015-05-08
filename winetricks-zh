@@ -8327,6 +8327,9 @@ load_fakechinese()
     w_register_font_replacement "NSimSun" "WenQuanYi Micro Hei"
     w_register_font_replacement "SimKai" "WenQuanYi Micro Hei"
     w_register_font_replacement "SimSun" "WenQuanYi Micro Hei"
+
+    ### fonts not usable, maybe use ms's sim*.ttf directly
+    # cp -v sim*.ttf $WINEPREFIX/driver_c/windows/Fonts/
 }
 
 #----------------------------------------------------------------
